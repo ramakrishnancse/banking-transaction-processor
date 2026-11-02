@@ -65,4 +65,4 @@ curl -X POST localhost:8080/api/v1/accounts/1000000001/deposits \
 
 Account status (frozen/closed), per-account overdraft limits, date-range filters on history,
 currency-aware `Money` type, outbox + events for notifications, metrics and health endpoints.
->>>>>>> 73669b7 (Banking transaction processor with H2 Persistence)
+
