@@ -61,8 +61,6 @@ curl -X POST localhost:8080/api/v1/accounts/1000000001/deposits \
 - Failed requests are not audited in the ledger; they return errors only.
 - "Real time" here means synchronous, immediately consistent processing. There is no event streaming or push notifications.
 
-## Next steps
+Postman Collection
 
-Account status (frozen/closed), per-account overdraft limits, date-range filters on history,
-currency-aware `Money` type, outbox + events for notifications, metrics and health endpoints.
-
+[Bank.postman_collection.json](https://github.com/user-attachments/files/34283039/Bank.postman_collection.json)
