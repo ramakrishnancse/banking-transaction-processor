@@ -1,17 +1,15 @@
-<<<<<<< HEAD
-# banking-transaction-processor
-=======
-# Banking Transaction Processor (Spring Boot + H2)
+
+# Banking Transaction Processor 
 
 Accounts, deposits, withdrawals, transfers and a per-account ledger, persisted in H2
 and safe under concurrent requests.
 
 ## Run
 
-```bash
+
 mvn test
 mvn spring-boot:run          # data is stored in ./data/bankdb (survives restarts)
-```
+
 
 H2 console (development only): http://localhost:8080/h2-console
 JDBC URL `jdbc:h2:file:./data/bankdb`, user `sa`, empty password. Stop the app first if the
@@ -38,12 +36,12 @@ Money-moving POSTs accept an optional `Idempotency-Key` header (max 64 chars).
 | 422 | Insufficient funds |
 | 503 | Lock timeout, nothing was applied, safe to retry |
 
-```bash
+Postman request
+------------------
 curl -X POST localhost:8080/api/v1/accounts -H 'Content-Type: application/json' \
      -d '{"ownerName":"Alice","initialDeposit":100.00}'
 curl -X POST localhost:8080/api/v1/accounts/1000000001/deposits \
      -H 'Content-Type: application/json' -H 'Idempotency-Key: order-42' -d '{"amount":25.50}'
-```
 
 ## How it behaves like a real banking core
 
